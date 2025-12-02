@@ -14,7 +14,38 @@
 #define THUMBS 36 37 38 39 40 41  // thumb keys
 
 / {
+        combos {
+                compatible = "zmk,combos";
+
+                // ESC + SPACE = NAV layer
+                // Holding both left thumb keys together activates navigation layer
+                // timeout-ms: both keys must be pressed within 50ms of each other
+                // key-positions: 36=ESC, 37=SPACE (left thumb cluster)
+                // &mo 2: momentary layer 2 (nav_layer) - releases when either key releases
+                combo_nav {
+                        timeout-ms = <50>;
+                        key-positions = <36 37>;
+                        bindings = <&mo 2>;
+                };
+
+                // BSPC + DEL = FUN layer
+                // Holding both right thumb keys together activates function layer
+                // timeout-ms: both keys must be pressed within 50ms of each other
+                // key-positions: 40=BSPC, 41=DEL (right thumb cluster)
+                // &mo 4: momentary layer 4 (fun_layer) - releases when either key releases
+                combo_fun {
+                        timeout-ms = <50>;
+                        key-positions = <40 41>;
+                        bindings = <&mo 4>;
+                };
+        };
+
         behaviors {
+                // Homerow mods for left hand
+                // Tap for letter, hold for modifier (Ctrl/Alt/Gui)
+                // Only triggers mod when opposite hand or thumb keys are pressed
+                // balanced flavor: waits full tapping-term before deciding
+                // require-prior-idle-ms: prevents accidental mod activation during fast typing
                 hml: homerow_mods_left {
                         compatible = "zmk,behavior-hold-tap";
                         #binding-cells = <2>;
@@ -27,6 +58,9 @@
                         hold-trigger-on-release;
                 };
 
+                // Homerow mods for right hand
+                // Same as hml but for right hand keys
+                // hold-trigger-key-positions set to left hand to prevent same-hand conflicts
                 hmr: homerow_mods_right {
                         compatible = "zmk,behavior-hold-tap";
                         #binding-cells = <2>;
@@ -39,7 +73,10 @@
                         hold-trigger-on-release;
                 };
 
-                ss: sticky_shift {
+                // Sticky hold-tap: tap for sticky key, hold for normal key press
+                // Usage: &sht KEY KEY for mods (e.g., &sht RSHFT RSHFT)
+                // Can be adapted for layers by changing bindings to <&mo>, <&sl>
+                sht: sticky_hold_tap {
                         compatible = "zmk,behavior-hold-tap";
                         #binding-cells = <2>;
                         flavor = "balanced";
@@ -50,11 +87,19 @@
         };
 };
 
+// Sticky key configuration
+// Sticky keys stay active for one keypress after release (one-shot modifiers)
+// release-after-ms: auto-release if no key pressed within 900ms
+// quick-release: releases immediately after next key press (no need to wait for release-after-ms)
 &sk {
         release-after-ms = <900>;
         quick-release;
 };
 
+// Layer tap configuration
+// Tap for key, hold for momentary layer activation
+// balanced flavor: waits full tapping-term before deciding between tap/hold
+// quick-tap-ms: allows rapid repeated taps without triggering hold
 &lt {
         tapping-term-ms = <200>;
         quick-tap-ms = <175>;
@@ -65,6 +110,11 @@
         keymap {
                 compatible = "zmk,keymap";
 
+                // Layer 0: Base layer - Colemak-DH layout
+                // Main typing layer with homerow mods
+                // Left homerow: R=Ctrl, S=Alt, T=Gui
+                // Right homerow: N=Gui, E=Alt, I=Ctrl
+                // Thumb combos: ESC+SPACE=Nav, TAB+RET=Sym, BSPC+DEL=Fun
                 base_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB  |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  | BKSP |
@@ -76,9 +126,13 @@
    &kp TAB   &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
    &kp LCTRL &kp A &hml LCTRL R &hml LALT S &hml LGUI T &kp G   &kp M &hmr RGUI N &hmr RALT E &hmr RCTRL I &kp O &kp RET
    &kp LSHFT &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp ESC
-          &mt LSHFT ESC &lt 1 SPACE &lt 2 TAB   &lt 4 RET &lt 3 BSPC &ss RSHFT RSHFT
+          &kp ESC &mt LSHIFT SPACE &lt 3 TAB   &lt 3 RET &mt RSHIFT BSPC &lt 1 DEL
                         >;
                 };
+                // Layer 1: Number layer
+                // Number pad layout on right hand (789, 456, 123, 0)
+                // Left hand has modifiers for modifier+number combinations
+                // Access: hold DEL key
                 num_layer {
 // -----------------------------------------------------------------------------------------
 // |       |     |     |     |     |     |   |     |  7  |  8  |  9  |     |      |
@@ -94,6 +148,10 @@
                         >;
                 };
 
+                // Layer 2: Navigation layer
+                // Arrow keys and page navigation on right hand
+                // Left hand has modifiers for modifier+navigation combinations
+                // Access: hold ESC+SPACE combo
                 nav_layer {
 // -----------------------------------------------------------------------------------------
 // |       |     |     |     |     |     |   |     |PGUP | UP  |HOME |     |      |
@@ -109,6 +167,11 @@
                         >;
                 };
 
+                // Layer 3: Symbol layer
+                // Special characters and symbols for programming
+                // Brackets/parens on left, operators and symbols on right
+                // Right hand homerow has mods for modifier+symbol combinations
+                // Access: hold TAB or hold RET
                 sym_layer {
 // -----------------------------------------------------------------------------------------
 // |       |  ^  |  {  |  (  |  <  |  [  |   |  ]  |  >  |  )  |  }  |  $  |      |
@@ -124,6 +187,11 @@
                         >;
                 };
 
+                // Layer 4: Function layer
+                // Bluetooth controls and media keys
+                // Left: Bluetooth profiles (BT1-5), clear, media controls, volume
+                // Right: Modifiers on homerow for modifier+function combinations
+                // Access: hold BSPC+DEL combo
                 fun_layer {
 // -----------------------------------------------------------------------------------------
 // |       | BT1 | BT2 | BT3 | BT4 | BT5 |   |     |     |     |     |     |      |
