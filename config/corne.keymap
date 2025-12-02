@@ -24,17 +24,6 @@
         combos {
                 compatible = "zmk,combos";
 
-                // ESC + SPACE = NAV layer
-                // Holding both left thumb keys together activates navigation layer
-                // timeout-ms: both keys must be pressed within 50ms of each other
-                // key-positions: 36=ESC, 37=SPACE (left thumb cluster)
-                // &mo NAV: momentary NAV layer - releases when either key releases
-                combo_nav {
-                        timeout-ms = <50>;
-                        key-positions = <36 37>;
-                        bindings = <&mo NAV>;
-                };
-
                 // BSPC + DEL = FUN layer
                 // Holding both right thumb keys together activates function layer
                 // timeout-ms: both keys must be pressed within 50ms of each other
@@ -121,96 +110,98 @@
                 // Main typing layer with homerow mods
                 // Left homerow: R=Ctrl, S=Alt, T=Gui
                 // Right homerow: N=Gui, E=Alt, I=Ctrl
-                // Thumb combos: ESC+SPACE=Nav, TAB+RET=Sym, BSPC+DEL=Fun
+                // Thumb keys: ESC/LSHIFT, SPACE/NUM, TAB/SYM, RET/SYM, BSPC/NAV, sticky-RSHIFT/RSHIFT
+                // Combo: BSPC+DEL=Fun
                 base_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB  |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  | BKSP |
 // | CTRL  |  A  | R/⎈ | S/⎇ | T/◆ |  G  |   |  M  | N/◆  | E/⎇ | I/⎈ |  O  | ENT  |
 // | SHFT  |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | ESC  |
-//            | ESC/LSHFT | SPC/NUM | TAB/NAV |   | ENT/FUN | BSPC/SYM | RSHFT/STICKY |
+//            | ESC/⇧ | SPC/NUM | TAB/SYM |   | RET/SYM | BSPC/NAV | ⇧/⇧ |
                         display-name = "Base";
                         bindings = <
    &kp TAB   &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
    &kp LCTRL &kp A &hml LCTRL R &hml LALT S &hml LGUI T &kp G   &kp M &hmr RGUI N &hmr RALT E &hmr RCTRL I &kp O &kp RET
    &kp LSHFT &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp ESC
-          &lt NUM ESC &mt LSHIFT SPACE &lt SYM TAB   &lt SYM RET &mt RSHIFT BSPC &lt NUM DEL
+          &mt LSHIFT ESC &lt NUM SPACE &lt SYM TAB   &lt SYM RET &lt NAV BSPC &sht RSHIFT RSHIFT
                         >;
                 };
                 // Layer 1: Number layer
-                // Number pad layout on right hand (789, 456, 123, 0)
-                // Left hand has modifiers for modifier+number combinations
-                // Access: hold DEL key
+                // Number pad layout on right hand (789, 456, 123, 0, .)
+                // Left homerow has modifiers (shift, ctrl, alt, gui) for modifier+number combinations
+                // Access: hold SPACE
                 num_layer {
 // -----------------------------------------------------------------------------------------
 // |       |     |     |     |     |     |   |     |  7  |  8  |  9  |     |      |
 // |       |  ⇧  |  ⎈  |  ⎇  |  ◆  |     |   |     |  4  |  5  |  6  |     |      |
-// |       |     |     |     |     |     |   |  0  |  1  |  2  |  3  |     |      |
-//                     |     |     |     |   |     |     |     |
+// |       |     |     |     |     |     |   |  0  |  1  |  2  |  3  |  .  |      |
+//                     |     |     | TAB |   | RET | BSP |     |
                         display-name = "Num";
                         bindings = <
    &none &none     &none     &none    &none    &none    &none  &kp N7 &kp N8 &kp N9 &none &none
    &none &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &none    &none  &kp N4 &kp N5 &kp N6 &none &none
-   &none &none     &none     &none    &none    &none    &kp N0 &kp N1 &kp N2 &kp N3 &none &none
-                        &none &kp SPACE &kp TAB   &kp RET &kp BSPC &none
+   &none &none     &none     &none    &none    &none    &kp N0 &kp N1 &kp N2 &kp N3 &kp DOT &none
+                        &trans &none &kp TAB   &kp RET &kp BSPC &trans
                         >;
                 };
 
                 // Layer 2: Navigation layer
-                // Arrow keys and page navigation on right hand
-                // Left hand has modifiers for modifier+navigation combinations
-                // Access: hold ESC+SPACE combo
+                // Left hand: arrow keys on homerow (R=left, S=down, T=right, F=up)
+                // Extended nav: W=home, X=end, P=pgup, D=pgdn
+                // Right homerow: modifiers (N=RGUI, E=RALT, I=RCTRL, O=RSHIFT)
+                // Access: hold BSPC
                 nav_layer {
 // -----------------------------------------------------------------------------------------
-// |       |     |     |     |     |     |   |     |PGUP | UP  |HOME |     |      |
-// |       |  ⇧  |  ⎈  |  ⎇  |  ◆  |     |   |     | LFT | DWN | RGT |     |      |
-// |       |     |     |     |     |     |   |     |PGDN |     | END |     |      |
-//                     |     |     |     |   |     |     |     |
+// |       |     | HOM | UP  |PGUP |     |   |     |     |     |     |     |      |
+// |       |     | LFT | DWN | RGT |     |   |     | ◆   | ⎇   | ⎈   |  ⇧  |      |
+// |       |     | END |     |PGDN |     |   |     |     |     |     |     |      |
+//                     |     | SPC | TAB |   | RET |     |     |
                         display-name = "Nav";
                         bindings = <
-   &none      &none     &none     &none    &none    &none    &none    &kp PG_UP &kp UP   &kp HOME  &none &none
-   &none      &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &none    &none    &kp LEFT  &kp DOWN &kp RIGHT &none &none
-   &none      &none     &none     &none    &none    &none    &none    &kp PG_DN &none    &kp END   &none &none
-                        &none &none &kp TAB   &kp RET &kp BSPC &kp DEL
+   &none &none &kp HOME &kp UP &kp PG_UP &none    &none &none &none &none &none &none
+   &none &none &kp LEFT &kp DOWN &kp RIGHT &none    &none &kp RGUI &kp RALT &kp RCTRL &kp RSHIFT &none
+   &none &none &kp END &none &kp PG_DN &none    &none &none &none &none &none &none
+                        &trans &kp SPACE &kp TAB   &kp RET &none &trans
                         >;
                 };
 
                 // Layer 3: Symbol layer
-                // Special characters and symbols for programming
-                // Brackets/parens on left, operators and symbols on right
-                // Right hand homerow has mods for modifier+symbol combinations
-                // Access: hold TAB or hold RET
+                // Programming symbols and special characters
+                // Left: brackets (W={, F=(, P=<, B=[) and symbols (Q=^, A=!, X=@, C=*, D=', V=", G=`, R/S/T with homerow mods)
+                // Right: brackets (J=], L=>, U=), Y=}, ;=$) and symbols (M=~, H=\, ,=-, .=+, /=%, with homerow mods on N/E/I)
+                // Access: hold TAB or RET
                 sym_layer {
 // -----------------------------------------------------------------------------------------
 // |       |  ^  |  {  |  (  |  <  |  [  |   |  ]  |  >  |  )  |  }  |  $  |      |
 // |       |  !  | ?/⎈ | =/⎇ | ;/◆ |  :  |   |  ~  | //◆ | &/⎇ | |/⎈ |  _  |      |
 // |       |  @  |  *  |  '  |  "  |  `  |   |  \  |  -  |  +  |  %  |  #  |      |
-//                     |     |     |     |   |     |     |     |
+//                     |     | SPC |     |   |     | BSP |     |
                         display-name = "Sym";
                         bindings = <
    &none &kp CARET &kp LBRC &kp LPAR &kp LT &kp LBKT   &kp RBKT &kp GT &kp RPAR &kp RBRC &kp DLLR &none
    &none &kp EXCL &hml LCTRL QMARK &hml LALT EQUAL &hml LGUI SEMI &kp COLON   &kp TILDE &hmr RGUI FSLH &hmr RALT AMPS &hmr RCTRL PIPE &kp UNDER &none
    &none &kp AT &kp STAR &kp SQT &kp DQT &kp GRAVE   &kp BSLH &kp MINUS &kp PLUS &kp PRCNT &kp HASH &none
-                             &kp ESC &kp SPACE &none   &none &kp BSPC &kp DEL
+                             &trans &kp SPACE &none   &none &kp BSPC &trans
                         >;
                 };
 
                 // Layer 4: Function layer
-                // Bluetooth controls and media keys
-                // Left: Bluetooth profiles (BT1-5), clear, media controls, volume
-                // Right: Modifiers on homerow for modifier+function combinations
-                // Access: hold BSPC+DEL combo
+                // Bluetooth and media controls
+                // Left: Bluetooth profiles (W/F/P/B/Q=BT1-5), clear (A=BTCLR), media (R=prev, S=play/pause, T=next), volume (C=mute, D=vol-, V=vol+)
+                // Right homerow: modifiers (N=RGUI, E=RALT, I=RCTRL, O=RSHIFT)
+                // Access: combo BSPC+DEL
                 fun_layer {
 // -----------------------------------------------------------------------------------------
 // |       | BT1 | BT2 | BT3 | BT4 | BT5 |   |     |     |     |     |     |      |
-// |       |BTCLR| PRV | P/P | NXT |     |   |     | N/◆ | E/⎇ | I/⎈ | O/⇧ |      |
+// |       |BTCLR| PRV | P/P | NXT |     |   |     |  ◆  |  ⎇  |  ⎈  |  ⇧  |      |
 // |       |     |MUTE |VLDN |VLUP |     |   |     |     |     |     |     |      |
-//                     |     |     |     |   |     |     |     |
+//                     |     | SPC | TAB |   | RET |     |     |
                         display-name = "Fun";
                         bindings = <
    &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &none &none &none &none &none &none
    &none &bt BT_CLR &kp C_PREV &kp C_PP &kp C_NEXT &none   &none &kp RGUI &kp RALT &kp RCTRL &kp RSHFT &none
    &none &none &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &none   &none &none &none &none &none &none
-                        &kp ESC &kp SPACE &kp TAB   &kp RET &none &none
+                        &trans &kp SPACE &kp TAB   &kp RET &none &trans
                         >;
                 };
         };
