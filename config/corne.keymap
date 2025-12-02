@@ -13,6 +13,13 @@
 #define KEYS_R 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35  // right hand
 #define THUMBS 36 37 38 39 40 41  // thumb keys
 
+// Layer definitions
+#define BASE 0
+#define NUM  1
+#define NAV  2
+#define SYM  3
+#define FUN  4
+
 / {
         combos {
                 compatible = "zmk,combos";
@@ -21,22 +28,22 @@
                 // Holding both left thumb keys together activates navigation layer
                 // timeout-ms: both keys must be pressed within 50ms of each other
                 // key-positions: 36=ESC, 37=SPACE (left thumb cluster)
-                // &mo 2: momentary layer 2 (nav_layer) - releases when either key releases
+                // &mo NAV: momentary NAV layer - releases when either key releases
                 combo_nav {
                         timeout-ms = <50>;
                         key-positions = <36 37>;
-                        bindings = <&mo 2>;
+                        bindings = <&mo NAV>;
                 };
 
                 // BSPC + DEL = FUN layer
                 // Holding both right thumb keys together activates function layer
                 // timeout-ms: both keys must be pressed within 50ms of each other
                 // key-positions: 40=BSPC, 41=DEL (right thumb cluster)
-                // &mo 4: momentary layer 4 (fun_layer) - releases when either key releases
+                // &mo FUN: momentary FUN layer - releases when either key releases
                 combo_fun {
                         timeout-ms = <50>;
                         key-positions = <40 41>;
-                        bindings = <&mo 4>;
+                        bindings = <&mo FUN>;
                 };
         };
 
@@ -126,7 +133,7 @@
    &kp TAB   &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
    &kp LCTRL &kp A &hml LCTRL R &hml LALT S &hml LGUI T &kp G   &kp M &hmr RGUI N &hmr RALT E &hmr RCTRL I &kp O &kp RET
    &kp LSHFT &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp ESC
-          &kp ESC &mt LSHIFT SPACE &lt 3 TAB   &lt 3 RET &mt RSHIFT BSPC &lt 1 DEL
+          &lt NUM ESC &mt LSHIFT SPACE &lt SYM TAB   &lt SYM RET &mt RSHIFT BSPC &lt NUM DEL
                         >;
                 };
                 // Layer 1: Number layer
@@ -144,7 +151,7 @@
    &none &none     &none     &none    &none    &none    &none  &kp N7 &kp N8 &kp N9 &none &none
    &none &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &none    &none  &kp N4 &kp N5 &kp N6 &none &none
    &none &none     &none     &none    &none    &none    &kp N0 &kp N1 &kp N2 &kp N3 &none &none
-                        &trans &none &kp TAB   &kp RET &kp BSPC &trans
+                        &none &kp SPACE &kp TAB   &kp RET &kp BSPC &none
                         >;
                 };
 
@@ -163,7 +170,7 @@
    &none      &none     &none     &none    &none    &none    &none    &kp PG_UP &kp UP   &kp HOME  &none &none
    &none      &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &none    &none    &kp LEFT  &kp DOWN &kp RIGHT &none &none
    &none      &none     &none     &none    &none    &none    &none    &kp PG_DN &none    &kp END   &none &none
-                        &trans &kp SPACE &none   &kp RET &kp BSPC &trans
+                        &none &none &kp TAB   &kp RET &kp BSPC &kp DEL
                         >;
                 };
 
@@ -183,7 +190,7 @@
    &none &kp CARET &kp LBRC &kp LPAR &kp LT &kp LBKT   &kp RBKT &kp GT &kp RPAR &kp RBRC &kp DLLR &none
    &none &kp EXCL &hml LCTRL QMARK &hml LALT EQUAL &hml LGUI SEMI &kp COLON   &kp TILDE &hmr RGUI FSLH &hmr RALT AMPS &hmr RCTRL PIPE &kp UNDER &none
    &none &kp AT &kp STAR &kp SQT &kp DQT &kp GRAVE   &kp BSLH &kp MINUS &kp PLUS &kp PRCNT &kp HASH &none
-                             &trans &kp SPACE &kp TAB   &kp RET &none &trans
+                             &kp ESC &kp SPACE &none   &none &kp BSPC &kp DEL
                         >;
                 };
 
@@ -203,7 +210,7 @@
    &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &none &none &none &none &none &none
    &none &bt BT_CLR &kp C_PREV &kp C_PP &kp C_NEXT &none   &none &kp RGUI &kp RALT &kp RCTRL &kp RSHFT &none
    &none &none &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &none   &none &none &none &none &none &none
-                        &trans &kp SPACE &kp TAB   &none &kp BSPC &trans
+                        &kp ESC &kp SPACE &kp TAB   &kp RET &none &none
                         >;
                 };
         };
