@@ -114,13 +114,13 @@
                 // Combo: BSPC+DEL=Fun
                 base_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB  |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  | BKSP |
+// |  TAB  |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  '  | BKSP |
 // | CTRL  |  A  | R/⎈ | S/⎇ | T/◆ |  G  |   |  M  | N/◆  | E/⎇ | I/⎈ |  O  | ENT  |
 // | SHFT  |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | ESC  |
 //            | ESC/⇧ | SPC/NUM | TAB/SYM |   | RET/SYM | BSPC/NAV | ⇧/⇧ |
                         display-name = "Base";
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
+   &kp TAB   &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SQT &kp BSPC
    &kp LCTRL &kp A &hml LCTRL R &hml LALT S &hml LGUI T &kp G   &kp M &hmr RGUI N &hmr RALT E &hmr RCTRL I &kp O &kp RET
    &kp LSHFT &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp ESC
           &mt LSHIFT ESC &lt NUM SPACE &lt SYM TAB   &lt SYM RET &lt NAV BSPC &sht RSHIFT RSHIFT
