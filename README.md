@@ -32,7 +32,8 @@ This layout is designed for:
 - **Colemak-DH** as the primary typing layout
 - **Homerow mods** with balanced flavor and cross-hand triggering
 - **Strong thumb usage** for layers and modifiers
-- **Programming-oriented symbol layer** with brackets and operators
+- **Optimized symbol layer** based on getreuer's research-backed layout
+- **Function key layer** with modifiers for IDE and debugging workflows
 - **Comfortable navigation** without leaving home position
 - **macOS modifier order** (Ctrl, Alt, Gui)
 
@@ -42,13 +43,14 @@ The goal is **minimal movement**, **high reliability**, and **efficient coding**
 
 ## Layers Overview
 
-The keymap has 5 layers:
+The keymap has 6 layers:
 
 - **Layer 0:** BASE (Colemak-DH + homerow mods)
 - **Layer 1:** NUM (Number pad + modifiers)
 - **Layer 2:** NAV (Navigation + arrows)
-- **Layer 3:** SYM (Symbols + brackets)
-- **Layer 4:** FUN (Bluetooth + media controls)
+- **Layer 3:** SYM (Symbols + brackets, getreuer's layout)
+- **Layer 4:** FUN (Function keys F1-F12)
+- **Layer 5:** MED (Media controls + Bluetooth)
 
 ---
 
@@ -72,9 +74,10 @@ Full Colemak-DH alpha layout with homerow modifiers:
 | Right middle | Backspace | NAV layer |
 | Right inner | Sticky Shift | Right Shift |
 
-### Combo
+### Combos
 
-- **BSPC + Sticky Shift:** FUN layer
+- **ESC + Space:** FUN layer (F1-F12 keys)
+- **BSPC + Sticky Shift:** MED layer (Media + Bluetooth)
 
 ---
 
@@ -113,40 +116,64 @@ This allows navigation with simultaneous modifiers (e.g., Shift+arrows for selec
 
 ---
 
-## Layer 3: SYM — Symbols + Brackets
+## Layer 3: SYM — Symbols (getreuer's layout)
 
-Programming symbols and special characters:
+Programming symbols and special characters based on [getreuer's optimized symbol layer](https://getreuer.info/posts/keyboards/symbol-layer/index.html):
 
 ### Top Row
 ```
-^  {  (  <  [    ]  >  )  }  $
+`  <  >  -  |    ^  {  }  $  \
 ```
 
 ### Home Row
 ```
-!  ?  =  ;  :    ~  /  &  |  _
+!  *  /  =  &    #  (  )  ;  "
 (Ctrl) (Alt) (Gui)    (Gui) (Alt) (Ctrl)
 ```
 
 ### Bottom Row
 ```
-@  *  '  "  `    \  -  +  %  #
+~  +  [  ]  %    @  :  _  ?  '
 ```
 
-- Brackets grouped on left side
-- Operators and symbols on right side
-- Homerow mods available on both hands for modifier+symbol combinations
+- Left hand: Common operators and bracket pairs
+- Right hand: Braces, parentheses, and special symbols
+- Homerow mods available on both hands (*/=/& on left, (/)/ ; on right)
 - **Access:** Hold TAB or RET
 
 ---
 
-## Layer 4: FUN — Bluetooth + Media
+## Layer 4: FUN — Function Keys
+
+Function keys F1-F12 with modifier support:
+
+### Right Hand Layout
+```
+     F1   F2   F3   F4
+     F5   F6   F7   F8
+     F9   F10  F11  F12
+```
+
+### Left Hand Modifiers
+
+- A = Shift
+- R = Ctrl
+- S = Alt
+- T = Gui
+
+This allows function key combinations (e.g., Ctrl+F5, Shift+F1) for debugging and IDE shortcuts.
+
+- **Access:** Combo ESC + Space
+
+---
+
+## Layer 5: MED — Media + Bluetooth
 
 System controls and connectivity:
 
 ### Bluetooth Profiles
 
-- W/F/P/B/Q = BT profiles 1-5
+- Q/W/F/P/B = BT profiles 1-5
 - A = Clear Bluetooth
 
 ### Media Controls
