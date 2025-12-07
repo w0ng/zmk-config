@@ -9,7 +9,7 @@ The canonical keymap lives here: **`config/corne.keymap`**
 
 ## Keymap Layout
 
-![Keymap Layout](assets/my_keymap.svg)
+![Keymap Layout](assets/corne.svg)
 
 ---
 
