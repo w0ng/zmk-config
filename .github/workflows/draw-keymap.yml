@@ -29,7 +29,7 @@ jobs:
 
       - name: Draw keymap
         run: |
-          keymap draw -c keymap_drawer.config.yaml config/corne.keymap > assets/my_keymap.svg
+          keymap -c keymap_drawer.config.yaml draw config/corne.keymap > assets/my_keymap.svg
 
       - name: Commit and push if changed
         run: |
