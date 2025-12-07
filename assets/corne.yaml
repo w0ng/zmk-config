@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: corne}
 layers:
   Base:
-  - TAB
+  - ''
   - Q
   - W
   - F
@@ -12,8 +12,8 @@ layers:
   - U
   - Y
   - ''''
-  - BSPC
-  - LCTRL
+  - ''
+  - ''
   - A
   - {t: R, h: LCTRL}
   - {t: S, h: LALT}
@@ -24,8 +24,8 @@ layers:
   - {t: E, h: RALT}
   - {t: I, h: RCTRL}
   - O
-  - RET
-  - LSHFT
+  - ''
+  - ''
   - Z
   - X
   - C
@@ -36,7 +36,7 @@ layers:
   - ','
   - .
   - /
-  - ESC
+  - ''
   - {t: ESC, h: LSHIFT}
   - {t: SPACE, h: Num}
   - {t: TAB, h: Sym}
