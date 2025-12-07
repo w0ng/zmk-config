@@ -1,0 +1,26 @@
+draw_config:
+  key_w: 60
+  key_h: 56
+  split_gap: 30
+  combo_w: 24
+  combo_h: 20
+  n_columns: 1
+  separate_combo_diagrams: true
+  ortho_layout:
+    split: true
+    rows: 3
+    columns: 5
+    thumbs: 3
+
+parse_config:
+  preprocess: true
+  skip_binding_parsing: false
+  raw_binding_map:
+    '&bootloader': BOOT
+    '&sys_reset': RESET
+    '&bt BT_CLR': BT CLR
+    '&bt BT_SEL 0': BT 1
+    '&bt BT_SEL 1': BT 2
+    '&bt BT_SEL 2': BT 3
+    '&bt BT_SEL 3': BT 4
+    '&bt BT_SEL 4': BT 5

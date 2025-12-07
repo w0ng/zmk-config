@@ -1,6 +1,6 @@
 # ZMK Config — Corne Wireless
 
-This repository contains my personal **ZMK firmware configuration** for a **wireless Choc Corne v3** using **Colemak-DH**, **homerow mods**, and optimized layers for programming on macOS.
+This repository contains my personal **[ZMK firmware](https://zmk.dev/) configuration** for a **wireless Choc Corne v3** using **[Colemak-DH](https://colemakmods.github.io/mod-dh/)**, **[timeless homerow mods](https://github.com/urob/zmk-config#timeless-homerow-mods)**, **[getreuer's symbol layer](https://getreuer.info/posts/keyboards/symbol-layer/index.html#my-symbol-layer)**, and optimized layers for programming on macOS.
 
 The canonical keymap lives here: **`config/corne.keymap`**
 (Always refer to this file for the most accurate source of truth.)
@@ -15,12 +15,12 @@ The canonical keymap lives here: **`config/corne.keymap`**
 
 ## Hardware
 
-- **Keyboard:** Corne v3 Wireless (Typeractive premium aluminium case)
-- **Switches:** Sunset tactile or Ambients silent linear (hot-swapped)
-- **Keycaps:** MBK Legend Ergo / MCC POM
-- **MCUs:** nice!nano v2 (one per half)
-- **Battery:** LiPo per half
-- **Display:** nice!view
+- **Keyboard:** [Corne v3 Wireless Choc](https://github.com/foostan/crkbd) ([Typeractive premium aluminium case](https://typeractive.xyz/products/corne-wireless-premium-aluminum-case))
+- **Switches:** [Sunset tactile](https://keebd.com/products/sunset-tactile-choc-switches) (hot-swapped)
+- **Keycaps:** [Moergo MCC](https://www.moergo.com/collections/mcc-keycaps/products/mcc-glv80-en?variant=44253212901649)
+- **MCUs:** [nice!nano v2](https://keebd.com/products/nice-nano) (one per half)
+- **Battery:** [LiPo](https://keebd.com/products/301230-3-7v-110mah-lipo-battery) per half
+- **Display:** [nice!view](https://keebd.com/products/nice-view)
 - **Host OS:** macOS (with Vim workflow)
 
 ---
@@ -195,7 +195,7 @@ System controls and connectivity:
 
 ## Homerow Mod Behavior
 
-Homerow mods use ZMK's `hold-tap` behavior with:
+Homerow mods use ZMK's `hold-tap` behavior with [urob's timeless homerow mods](https://github.com/urob/zmk-config#timeless-homerow-mods) configuration:
 
 - **Flavor:** `balanced` - waits full tapping-term before deciding
 - **Tapping term:** 280ms
