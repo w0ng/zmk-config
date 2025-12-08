@@ -135,7 +135,7 @@
 // |  A  | R/⎈ | S/⎇ | T/◆ |  G  |   |  M  | N/◆ | E/⎇ | I/⎈ |  O  |
 // |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H  |  ,  |  .  |  /  |
 //   | ESC/⇧ | SPC/NUM | TAB/SYM |   | RET/SYM | BSP/NAV |  ⇧/⇧  |
-                        display-name = "Base"
+                        display-name = "Base";
                         bindings = <
    &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SQT
    &kp A &hml LCTRL R &hml LALT S &hml LGUI T &kp G   &kp M &hmr RGUI N &hmr RALT E &hmr RCTRL I &kp O
