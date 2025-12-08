@@ -133,7 +133,7 @@ Programming symbols and special characters based on [getreuer's optimized symbol
 
 ### Bottom Row
 ```
-~  +  ?  _  %    @  :  [  ]  '
+~  +  ?  _  %    @  [  ]  :  '
 ```
 
 - Left hand: Common operators, backslash, and punctuation
