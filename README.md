@@ -1,6 +1,6 @@
-# ZMK Config — Corne Wireless
+# ZMK Config — Chocofi
 
-This repository contains my personal **[ZMK firmware](https://zmk.dev/) configuration** for a **wireless Choc Corne v3** using **[Colemak-DH](https://colemakmods.github.io/mod-dh/)**, **[timeless homerow mods](https://github.com/urob/zmk-config#timeless-homerow-mods)**, **[getreuer's symbol layer](https://getreuer.info/posts/keyboards/symbol-layer/index.html#my-symbol-layer)**, and optimized layers for programming on macOS.
+This repository contains my personal **[ZMK firmware](https://zmk.dev/) configuration** for a **[Chocofi](https://github.com/pashutk/chocofi)** wireless keyboard using **[Colemak-DH](https://colemakmods.github.io/mod-dh/)**, **[timeless homerow mods](https://github.com/urob/zmk-config#timeless-homerow-mods)**, **[getreuer's symbol layer](https://getreuer.info/posts/keyboards/symbol-layer/index.html#my-symbol-layer)**, and optimized layers for programming on macOS.
 
 The canonical keymap lives here: **`config/corne.keymap`**
 (Always refer to this file for the most accurate source of truth.)
@@ -15,7 +15,7 @@ The canonical keymap lives here: **`config/corne.keymap`**
 
 ## Hardware
 
-- **Keyboard:** [Corne v3 Wireless Choc](https://github.com/foostan/crkbd) ([Typeractive premium aluminium case](https://typeractive.xyz/products/corne-wireless-premium-aluminum-case))
+- **Keyboard:** [Chocofi](https://github.com/pashutk/chocofi) (36-key split wireless keyboard)
 - **Switches:** [Sunset tactile](https://keebd.com/products/sunset-tactile-choc-switches) (hot-swapped)
 - **Keycaps:** [Moergo MCC](https://www.moergo.com/collections/mcc-keycaps/products/mcc-glv80-en?variant=44253212901649)
 - **MCUs:** [nice!nano v2](https://keebd.com/products/nice-nano) (one per half)
@@ -116,13 +116,13 @@ This allows navigation with simultaneous modifiers (e.g., Shift+arrows for selec
 
 ---
 
-## Layer 3: SYM — Symbols (getreuer's layout)
+## Layer 3: SYM — Symbols (modified from getreuer's layout)
 
 Programming symbols and special characters based on [getreuer's optimized symbol layer](https://getreuer.info/posts/keyboards/symbol-layer/index.html):
 
 ### Top Row
 ```
-`  <  >  -  |    ^  {  }  $  \
+\  <  >  -  |    ^  {  }  $  `
 ```
 
 ### Home Row
@@ -133,11 +133,11 @@ Programming symbols and special characters based on [getreuer's optimized symbol
 
 ### Bottom Row
 ```
-~  +  [  ]  %    @  :  _  ?  '
+~  +  ?  _  %    @  :  [  ]  '
 ```
 
-- Left hand: Common operators and bracket pairs
-- Right hand: Braces, parentheses, and special symbols
+- Left hand: Common operators, backslash, and punctuation
+- Right hand: Braces, parentheses, brackets, and special symbols
 - Homerow mods available on both hands (*/=/& on left, (/)/ ; on right)
 - **Access:** Hold TAB or RET
 
