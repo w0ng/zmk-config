@@ -35,7 +35,7 @@ This layout is designed for:
 - **Optimized symbol layer** based on getreuer's research-backed layout
 - **Function key layer** with modifiers for IDE and debugging workflows
 - **Comfortable navigation** without leaving home position
-- **macOS modifier order** (Ctrl, Alt, Gui)
+- **CAGS modifier order** (Ctrl, Alt, Gui, Shift) mirrored on both hands
 
 The goal is **minimal movement**, **high reliability**, and **efficient coding**.
 
@@ -60,8 +60,8 @@ Full Colemak-DH alpha layout with homerow modifiers:
 
 ### Homerow Mods
 
-- **Left hand:** R = Ctrl, S = Alt, T = Gui
-- **Right hand:** N = Gui, E = Alt, I = Ctrl
+- **Left hand (CAGS):** A = Ctrl, R = Alt, S = Gui, T = Shift
+- **Right hand (SGAC):** N = Shift, E = Gui, I = Alt, O = Ctrl
 
 ### Thumb Keys
 
@@ -91,7 +91,7 @@ Number pad layout optimized for right-hand entry:
 0   1  2  3  .
 ```
 
-- Left homerow has modifiers (Shift, Ctrl, Alt, Gui) for modifier+number combinations
+- Left homerow has modifiers in CAGS order (Ctrl, Alt, Gui, Shift) for modifier+number combinations
 - Decimal point (.) for numeric entry
 - **Access:** Hold SPACE
 
@@ -106,9 +106,9 @@ Arrow keys positioned on the left hand for efficient navigation:
 - **Homerow:** R = Left, S = Down, T = Right, F = Up
 - **Extended:** W = Home, X = End, P = Page Up, D = Page Down
 
-### Right Hand Modifiers
+### Right Hand Modifiers (SGAC)
 
-- N = Gui, E = Alt, I = Ctrl, O = Shift
+- N = Shift, E = Gui, I = Alt, O = Ctrl
 
 This allows navigation with simultaneous modifiers (e.g., Shift+arrows for selection).
 
@@ -128,7 +128,7 @@ Programming symbols and special characters based on [getreuer's optimized symbol
 ### Home Row
 ```
 !  *  /  =  &    #  (  )  ;  "
-(Ctrl) (Alt) (Gui)    (Gui) (Alt) (Ctrl)
+(Ctrl) (Alt) (Gui) (Shift)    (Shift) (Gui) (Alt) (Ctrl)
 ```
 
 ### Bottom Row
@@ -138,7 +138,7 @@ Programming symbols and special characters based on [getreuer's optimized symbol
 
 - Left hand: Common operators, backslash, and punctuation
 - Right hand: Braces, parentheses, brackets, and special symbols
-- Homerow mods available on both hands (*/=/& on left, (/)/ ; on right)
+- Homerow mods available on both hands in CAGS/SGAC pattern (!/*/=/= on left, (/)/)/ ;" on right)
 - **Access:** Hold TAB or RET
 
 ---
@@ -154,12 +154,12 @@ Function keys F1-F12 with modifier support:
      F9   F10  F11  F12
 ```
 
-### Left Hand Modifiers
+### Left Hand Modifiers (CAGS)
 
-- A = Shift
-- R = Ctrl
-- S = Alt
-- T = Gui
+- A = Ctrl
+- R = Alt
+- S = Gui
+- T = Shift
 
 This allows function key combinations (e.g., Ctrl+F5, Shift+F1) for debugging and IDE shortcuts.
 
@@ -185,9 +185,9 @@ System controls and connectivity:
 - D = Volume Down
 - V = Volume Up
 
-### Right Hand Modifiers
+### Right Hand Modifiers (SGAC)
 
-- N = Gui, E = Alt, I = Ctrl, O = Shift
+- N = Shift, E = Gui, I = Alt, O = Ctrl
 
 - **Access:** Combo BSPC + Sticky Shift
 
