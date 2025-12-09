@@ -11,16 +11,16 @@ layers:
   - U
   - Y
   - ''''
-  - {t: A, h: LCTRL}
-  - {t: R, h: LALT}
-  - {t: S, h: LGUI}
-  - {t: T, h: LSHIFT}
+  - {t: A, h: LSHIFT}
+  - {t: R, h: LCTRL}
+  - {t: S, h: LALT}
+  - {t: T, h: LGUI}
   - G
   - M
-  - {t: N, h: RSHIFT}
-  - {t: E, h: RGUI}
-  - {t: I, h: RALT}
-  - {t: O, h: RCTRL}
+  - {t: N, h: RGUI}
+  - {t: E, h: RALT}
+  - {t: I, h: RCTRL}
+  - {t: O, h: RSHIFT}
   - Z
   - X
   - C
@@ -48,10 +48,10 @@ layers:
   - '8'
   - '9'
   - ''
+  - LSHFT
   - LCTRL
   - LALT
   - LGUI
-  - LSHIFT
   - ''
   - ''
   - '4'
@@ -63,7 +63,7 @@ layers:
   - ''
   - ''
   - ''
-  - '0'
+  - ''
   - '1'
   - '2'
   - '3'
@@ -72,7 +72,7 @@ layers:
   - {type: held}
   - TAB
   - RET
-  - BSPC
+  - '0'
   - {t: ▽, type: trans}
   Nav:
   - ''
@@ -91,10 +91,10 @@ layers:
   - RIGHT
   - ''
   - ''
-  - RSHIFT
   - RGUI
   - RALT
   - RCTRL
+  - RSHIFT
   - ''
   - END
   - ''
@@ -122,16 +122,16 @@ layers:
   - '}'
   - $
   - '`'
-  - {t: '!', h: LCTRL}
-  - {t: '*', h: LALT}
-  - {t: /, h: LGUI}
-  - {t: '=', h: LSHIFT}
+  - {t: '!', h: LSHIFT}
+  - {t: '*', h: LCTRL}
+  - {t: /, h: LALT}
+  - {t: '=', h: LGUI}
   - '&'
   - '#'
-  - {t: (, h: RSHIFT}
-  - {t: ), h: RGUI}
-  - {t: ;, h: RALT}
-  - {t: '"', h: RCTRL}
+  - {t: (, h: RGUI}
+  - {t: ), h: RALT}
+  - {t: ;, h: RCTRL}
+  - {t: '"', h: RSHIFT}
   - '~'
   - +
   - '?'
@@ -159,10 +159,10 @@ layers:
   - F2
   - F3
   - F4
+  - LSHFT
   - LCTRL
   - LALT
   - LGUI
-  - LSHIFT
   - ''
   - ''
   - F5
@@ -202,10 +202,10 @@ layers:
   - NEXT
   - ''
   - ''
-  - RSHIFT
   - RGUI
   - RALT
   - RCTRL
+  - RSHFT
   - ''
   - MUTE
   - VOL DN
