@@ -60,8 +60,8 @@ Full Colemak-DH alpha layout with homerow modifiers:
 
 ### Homerow Mods
 
-- **Left hand:** R = Ctrl, S = Alt, T = Gui
-- **Right hand:** N = Gui, E = Alt, I = Ctrl
+- **Left hand:** A = Shift, R = Ctrl, S = Alt, T = Gui
+- **Right hand:** N = Gui, E = Alt, I = Ctrl, O = Shift
 
 ### Thumb Keys
 
@@ -88,9 +88,10 @@ Number pad layout optimized for right-hand entry:
 ```
     7  8  9
     4  5  6
-0   1  2  3  .
+    1  2  3  .
 ```
 
+- 0 is on the right thumb (backspace position for easy access)
 - Left homerow has modifiers (Shift, Ctrl, Alt, Gui) for modifier+number combinations
 - Decimal point (.) for numeric entry
 - **Access:** Hold SPACE
@@ -128,7 +129,7 @@ Programming symbols and special characters based on [getreuer's optimized symbol
 ### Home Row
 ```
 !  *  /  =  &    #  (  )  ;  "
-(Ctrl) (Alt) (Gui)    (Gui) (Alt) (Ctrl)
+(Shift) (Ctrl) (Alt) (Gui)    (Gui) (Alt) (Ctrl) (Shift)
 ```
 
 ### Bottom Row
@@ -138,7 +139,7 @@ Programming symbols and special characters based on [getreuer's optimized symbol
 
 - Left hand: Common operators, backslash, and punctuation
 - Right hand: Braces, parentheses, brackets, and special symbols
-- Homerow mods available on both hands (*/=/& on left, (/)/ ; on right)
+- Homerow mods available on both hands (!=Shift, *=Ctrl, /=Alt, ==Gui on left; (=Gui, )=Alt, ;=Ctrl, "=Shift on right)
 - **Access:** Hold TAB or RET
 
 ---

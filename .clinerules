@@ -1,0 +1,17 @@
+# ZMK Config Instructions
+
+## Important Workflow Notes
+
+- **When updating `config/corne.keymap`:** Always update `README.md` to reflect any changes to:
+  - Homerow mod assignments
+  - Layer layouts
+  - Key positions or behaviors
+  - Thumb key configurations
+
+Keep the README in sync with the keymap to ensure documentation accuracy.
+
+## Git Commit Policy
+
+- **When "accept edits" is enabled:** Do NOT create git commits until the user explicitly tells you to
+- Wait for explicit user approval before running `git commit` commands
+- The user will tell you when they're ready to commit changes

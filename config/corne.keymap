@@ -124,21 +124,21 @@
 
                 // Layer 0: Base - Colemak-DH
                 // Main typing layer with homerow mods
-                // Left homerow: R=Ctrl, S=Alt, T=Gui
-                // Right homerow: N=Gui, E=Alt, I=Ctrl
+                // Left homerow: A=Shift, R=Ctrl, S=Alt, T=Gui
+                // Right homerow: N=Gui, E=Alt, I=Ctrl, O=Shift
                 // Thumb keys: ESC/LSHIFT, SPACE/NUM, TAB/SYM, RET/SYM, BSPC/NAV, sticky-RSHIFT
                 // Access: default layer
                 // Combos: ESC+SPC=Fun, BSPC+DEL=Med
                 base_layer {
 // -----------------------------------------------------------------------------------------
 // |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L  |  U  |  Y  |  '  |
-// |  A  | R/⎈ | S/⎇ | T/◆ |  G  |   |  M  | N/◆ | E/⎇ | I/⎈ |  O  |
+// | A/⇧ | R/⎈ | S/⎇ | T/◆ |  G  |   |  M  | N/◆ | E/⎇ | I/⎈ | O/⇧ |
 // |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H  |  ,  |  .  |  /  |
 //   | ESC/⇧ | SPC/NUM | TAB/SYM |   | RET/SYM | BSP/NAV |  ⇧/⇧  |
                         display-name = "Base";
                         bindings = <
    &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SQT
-   &kp A &hml LCTRL R &hml LALT S &hml LGUI T &kp G   &kp M &hmr RGUI N &hmr RALT E &hmr RCTRL I &kp O
+   &hml LSHIFT A &hml LCTRL R &hml LALT S &hml LGUI T &kp G   &kp M &hmr RGUI N &hmr RALT E &hmr RCTRL I &hmr RSHIFT O
    &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH
           &mt LSHIFT ESC &lt NUM SPACE &lt SYM TAB   &lt SYM RET &lt NAV BSPC &sht RSHIFT RSHIFT
                         >;
@@ -146,20 +146,21 @@
                 // Layer 1: Num - Number pad
                 // Number pad layout on right hand
                 // Left homerow: A=Shift, R=Ctrl, S=Alt, T=Gui (regular modifiers for modifier+number combos)
-                // Right: 7-9 (top), 4-6 (home), 1-3 (bottom), 0 and . on bottom left
+                // Right: 7-9 (top), 4-6 (home), 1-3 (bottom), . on bottom right
+                // 0 is on right thumb (backspace position)
                 // Access: hold SPACE
                 num_layer {
 // -----------------------------------------------------------------------------------------
 // |     |     |     |     |     |   |     |  7  |  8  |  9  |     |
 // |  ⇧  |  ⎈  |  ⎇  |  ◆  |     |   |     |  4  |  5  |  6  |     |
-// |     |     |     |     |     |   |  0  |  1  |  2  |  3  |  .  |
-//             |     |     | TAB |   | RET | BSP |     |
+// |     |     |     |     |     |   |     |  1  |  2  |  3  |  .  |
+//             |     |     | TAB |   | RET |  0  |     |
                         display-name = "Num";
                         bindings = <
    &none     &none     &none    &none    &none    &none  &kp N7 &kp N8 &kp N9 &none
    &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &none    &none  &kp N4 &kp N5 &kp N6 &none
-   &none     &none     &none    &none    &none    &kp N0 &kp N1 &kp N2 &kp N3 &kp DOT
-                        &trans &none &kp TAB   &kp RET &kp BSPC &trans
+   &none     &none     &none    &none    &none    &none &kp N1 &kp N2 &kp N3 &kp DOT
+                        &trans &none &kp TAB   &kp RET &kp N0 &trans
                         >;
                 };
 
@@ -185,19 +186,19 @@
 
                 // Layer 3: Sym - Symbols
                 // Programming symbols and special characters (based on getreuer's layout)
-                // Left: \ < > - | (top), ! * / = & (home), ~ + ? _ % (bottom) with homerow mods on */=/&
-                // Right: ^ { } $ ` (top), # ( ) ; " (home), @ [ ] : ' (bottom) with homerow mods on (/)/ ;
+                // Left: \ < > - | (top), ! * / = & (home), ~ + ? _ % (bottom) with homerow mods on !=Shift, *=Ctrl, /=Alt, ==Gui
+                // Right: ^ { } $ ` (top), # ( ) ; " (home), @ [ ] : ' (bottom) with homerow mods on (=Gui, )=Alt, ;=Ctrl, "=Shift
                 // Access: hold TAB or RET
                 sym_layer {
 // -----------------------------------------------------------------------------------------
 // |  \  |  <  |  >  |  -  |  |  |   |  ^  |  {  |  }  |  $  |  `  |
-// |  !  | */⎈ | //⎇ | =/◆ |  &  |   |  #  | (/◆ | )/⎇ | ;/⎈ |  "  |
+// | !/⇧ | */⎈ | //⎇ | =/◆ |  &  |   |  #  | (/◆ | )/⎇ | ;/⎈ | "/⇧ |
 // |  ~  |  +  |  ?  |  _  |  %  |   |  @  |  [  |  ]  |  :  |  '  |
 //             |     | SPC |     |   |     | BSP |     |
                         display-name = "Sym";
                         bindings = <
    &kp BSLH &kp LT &kp GT &kp MINUS &kp PIPE   &kp CARET &kp LBRC &kp RBRC &kp DLLR &kp GRAVE
-   &kp EXCL &hml LCTRL STAR &hml LALT FSLH &hml LGUI EQUAL &kp AMPS   &kp HASH &hmr RGUI LPAR &hmr RALT RPAR &hmr RCTRL SEMI &kp DQT
+   &hml LSHIFT EXCL &hml LCTRL STAR &hml LALT FSLH &hml LGUI EQUAL &kp AMPS   &kp HASH &hmr RGUI LPAR &hmr RALT RPAR &hmr RCTRL SEMI &hmr RSHIFT DQT
    &kp TILDE &kp PLUS &kp QMARK &kp UNDER &kp PRCNT   &kp AT &kp LBKT &kp RBKT &kp COLON &kp SQT
                              &trans &kp SPACE &none   &none &kp BSPC &trans
                         >;
