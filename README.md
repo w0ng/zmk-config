@@ -17,7 +17,7 @@ The canonical keymap lives here: **`config/corne.keymap`**
 
 - **Keyboard:** [Chocofi](https://github.com/pashutk/chocofi) (36-key split wireless keyboard)
 - **Switches:** [Sunset tactile](https://keebd.com/products/sunset-tactile-choc-switches) (hot-swapped)
-- **Keycaps:** [Moergo MCC](https://www.moergo.com/collections/mcc-keycaps/products/mcc-glv80-en?variant=44253212901649)
+- **Keycaps:** [PBT KLP Lame Keycaps](https://github.com/braindefender/KLP-Lame-Keycaps)
 - **MCUs:** [nice!nano v2](https://keebd.com/products/nice-nano) (one per half)
 - **Battery:** [LiPo](https://keebd.com/products/301230-3-7v-110mah-lipo-battery) per half
 - **Display:** [nice!view](https://keebd.com/products/nice-view)
