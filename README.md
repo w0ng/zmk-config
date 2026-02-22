@@ -106,6 +106,7 @@ Arrow keys positioned on the left hand for efficient navigation:
 
 - **Homerow:** R = Left, S = Down, T = Right, F = Up
 - **Extended:** W = Home, X = End, P = Page Up, D = Page Down
+- **C = Globe (macOS Dictation)**
 
 ### Right Hand Modifiers
 
